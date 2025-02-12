@@ -1,13 +1,17 @@
-import random
+#using random module
+# winning rules as follows:
+# Rock vs paper->paper wins
+# Rock vs scissor->Rock wins
+# paper vs scissor->scissor win
 
-# List of choices
+import random
 choices = ["rock", "scissor", "paper"]
 
 while True:
     ccount = 0  # Computer score
     ucount = 0  # User score
 
-    # Start Game Prompt
+    
     try:
         user_choice = int(input('''
 🎮 Game Start...
@@ -17,9 +21,9 @@ Your choice: '''))
 
         if user_choice != 1:
             print("👋 Thanks for playing! See you next time!")
-            break  # Exit game
+            break  
 
-        for _ in range(5):  # Loop for 5 rounds
+        for _ in range(5): 
             try:
                 userInput = int(input('''
 🪨 1 - Rock
@@ -29,9 +33,9 @@ Your choice: '''))
 
                 if userInput not in [1, 2, 3]:
                     print("❌ Invalid choice! Please enter 1️⃣, 2️⃣, or 3️⃣.")
-                    continue  # Restart round if input is invalid
+                    continue  
 
-                # Map input number to actual choice
+                
                 uchoice = choices[userInput - 1]
                 Cchoice = random.choice(choices)
 
